@@ -1,0 +1,2156 @@
+[2023-03-09 22:51:41,767][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\MySQLdb\connections.py", line 259, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.ProgrammingError: (1146, "Table 'django_vue_admin.party_history_study' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 80, in list
+    page = self.paginate_queryset(queryset)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\generics.py", line 171, in paginate_queryset
+    return self.paginator.paginate_queryset(queryset, self.request, view=self)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\pagination.py", line 41, in paginate_queryset
+    self.page = paginator.page(page_number)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\core\paginator.py", line 76, in page
+    number = self.validate_number(number)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\core\paginator.py", line 54, in validate_number
+    if number > self.num_pages:
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\utils\functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\core\paginator.py", line 103, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\utils\functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\core\paginator.py", line 97, in count
+    return c()
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\query.py", line 412, in count
+    return self.query.get_count(using=self.db)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\sql\query.py", line 517, in get_count
+    number = obj.get_aggregation(using, ['__count'])['__count']
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\sql\query.py", line 502, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\sql\compiler.py", line 1175, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\MySQLdb\connections.py", line 259, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'django_vue_admin.party_history_study' doesn't exist")
+
+[2023-03-09 22:52:58,979][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\MySQLdb\connections.py", line 259, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.ProgrammingError: (1146, "Table 'django_vue_admin.party_history_study' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 80, in list
+    page = self.paginate_queryset(queryset)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\generics.py", line 171, in paginate_queryset
+    return self.paginator.paginate_queryset(queryset, self.request, view=self)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\pagination.py", line 41, in paginate_queryset
+    self.page = paginator.page(page_number)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\core\paginator.py", line 76, in page
+    number = self.validate_number(number)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\core\paginator.py", line 54, in validate_number
+    if number > self.num_pages:
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\utils\functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\core\paginator.py", line 103, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\utils\functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\core\paginator.py", line 97, in count
+    return c()
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\query.py", line 412, in count
+    return self.query.get_count(using=self.db)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\sql\query.py", line 517, in get_count
+    number = obj.get_aggregation(using, ['__count'])['__count']
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\sql\query.py", line 502, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\sql\compiler.py", line 1175, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\MySQLdb\connections.py", line 259, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table 'django_vue_admin.party_history_study' doesn't exist")
+
+[2023-03-09 22:55:55,960][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 18:31:36,930][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 18:35:14,271][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 18:35:14,928][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 18:35:16,917][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 18:37:40,233][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 18:37:41,790][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 18:38:25,499][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 18:38:27,945][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 18:39:17,800][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 18:40:59,631][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 18:43:32,299][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 18:43:34,111][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 18:43:43,304][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 18:44:55,216][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 18:44:57,315][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 18:45:00,334][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 18:45:24,406][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 18:45:39,794][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 18:46:01,879][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 18:46:03,890][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 18:46:16,782][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 18:46:34,019][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 18:50:39,386][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 18:52:11,608][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 74, in create
+    serializer.is_valid(raise_exception=True)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\serializers.py", line 220, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\serializers.py", line 419, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\serializers.py", line 472, in to_internal_value
+    for field in fields:
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\serializers.py", line 355, in _writable_fields
+    for field in self.fields.values():
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django_restql\mixins.py", line 424, in fields
+    return self.allowed_fields
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\utils\functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django_restql\mixins.py", line 153, in allowed_fields
+    fields = super().fields
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\utils\functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\serializers.py", line 349, in fields
+    for key, value in self.get_fields().items():
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\serializers.py", line 1029, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\serializers.py", line 1101, in get_field_names
+    assert not (fields is None and exclude is None), (
+AssertionError: ("Creating a ModelSerializer without either the 'fields' attribute or the 'exclude' attribute has been deprecated since 3.3.0, and is now disallowed. Add an explicit fields = '__all__' to the partyHistoryStudyCreateUpdateSerializer serializer.",)
+
+[2023-03-10 18:59:41,374][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 74, in create
+    serializer.is_valid(raise_exception=True)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\serializers.py", line 220, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\serializers.py", line 419, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\serializers.py", line 472, in to_internal_value
+    for field in fields:
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\serializers.py", line 355, in _writable_fields
+    for field in self.fields.values():
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django_restql\mixins.py", line 424, in fields
+    return self.allowed_fields
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\utils\functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django_restql\mixins.py", line 153, in allowed_fields
+    fields = super().fields
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\utils\functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\serializers.py", line 349, in fields
+    for key, value in self.get_fields().items():
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\serializers.py", line 1029, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\serializers.py", line 1101, in get_field_names
+    assert not (fields is None and exclude is None), (
+AssertionError: ("Creating a ModelSerializer without either the 'fields' attribute or the 'exclude' attribute has been deprecated since 3.3.0, and is now disallowed. Add an explicit fields = '__all__' to the partyHistoryStudyCreateUpdateSerializer serializer.",)
+
+[2023-03-10 19:01:38,882][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 73, in create
+    serializer = self.get_serializer(data=request.data, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\serializers.py", line 115, in __init__
+    super().__init__(**kwargs)
+TypeError: __init__() got an unexpected keyword argument 'request'
+
+[2023-03-10 19:02:07,345][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 73, in create
+    serializer = self.get_serializer(data=request.data, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\serializers.py", line 115, in __init__
+    super().__init__(**kwargs)
+TypeError: __init__() got an unexpected keyword argument 'request'
+
+[2023-03-10 19:03:26,456][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 73, in create
+    serializer = self.get_serializer(data=request.data, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\serializers.py", line 115, in __init__
+    super().__init__(**kwargs)
+TypeError: __init__() got an unexpected keyword argument 'request'
+
+[2023-03-10 19:03:53,627][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 74, in create
+    serializer.is_valid(raise_exception=True)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\serializers.py", line 220, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\serializers.py", line 419, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\serializers.py", line 472, in to_internal_value
+    for field in fields:
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\serializers.py", line 355, in _writable_fields
+    for field in self.fields.values():
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django_restql\mixins.py", line 424, in fields
+    return self.allowed_fields
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\utils\functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django_restql\mixins.py", line 153, in allowed_fields
+    fields = super().fields
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\utils\functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\serializers.py", line 349, in fields
+    for key, value in self.get_fields().items():
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\serializers.py", line 1029, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\serializers.py", line 1101, in get_field_names
+    assert not (fields is None and exclude is None), (
+AssertionError: ("Creating a ModelSerializer without either the 'fields' attribute or the 'exclude' attribute has been deprecated since 3.3.0, and is now disallowed. Add an explicit fields = '__all__' to the partyHistoryStudyCreateUpdateSerializer serializer.",)
+
+[2023-03-10 19:05:29,432][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:05:30,072][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:34:04,921][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:34:06,644][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:34:55,783][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:37:55,601][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:37:59,460][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:38:00,659][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:39:50,713][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:40:00,745][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:40:21,368][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:40:31,008][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:40:52,645][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:40:54,091][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:41:03,643][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:41:05,445][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:41:08,376][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:41:11,640][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:42:46,631][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:42:49,136][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:44:16,156][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:48:21,283][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:48:56,501][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:48:57,141][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:49:32,935][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:49:53,438][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:50:17,702][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:51:30,128][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:51:43,356][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:51:50,643][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:51:52,390][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:51:53,034][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:51:53,636][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:51:54,257][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:51:56,113][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:52:37,669][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:52:41,225][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:55:19,868][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:55:21,653][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 19:56:04,795][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-03-10 20:02:18,820][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 82, in list
+    serializer = self.get_serializer(page, many=True, request=request)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 70, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "C:\Users\LiY\AppData\Local\Programs\Python\Python39\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'many'
+
+[2023-05-04 20:38:06,014][daphne.server.listen_error():160] [CRITICAL] Listen failure: Couldn't listen on 0.0.0:8000: [Errno 11001] getaddrinfo failed.
+[2023-05-04 21:03:29,107][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\backends\base\base.py", line 219, in ensure_connection
+    self.connect()
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\backends\base\base.py", line 200, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\backends\mysql\base.py", line 234, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\MySQLdb\__init__.py", line 130, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\MySQLdb\connections.py", line 185, in __init__
+    super().__init__(*args, **kwargs2)
+MySQLdb._exceptions.OperationalError: (2002, "Can't connect to MySQL server on 'rm-bp1di056jgb8m11774o.mysql.rds.aliyuncs.com' (10060)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 414, in initial
+    self.perform_authentication(request)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 324, in perform_authentication
+    request.user
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\request.py", line 227, in user
+    self._authenticate()
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\request.py", line 380, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework_simplejwt\authentication.py", line 40, in authenticate
+    return self.get_user(validated_token), validated_token
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework_simplejwt\authentication.py", line 119, in get_user
+    user = self.user_model.objects.get(**{api_settings.USER_ID_FIELD: user_id})
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 431, in get
+    num = len(clone)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 262, in __len__
+    self._fetch_all()
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\compiler.py", line 1173, in execute_sql
+    cursor = self.connection.cursor()
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\backends\base\base.py", line 259, in cursor
+    return self._cursor()
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\backends\base\base.py", line 235, in _cursor
+    self.ensure_connection()
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\backends\base\base.py", line 219, in ensure_connection
+    self.connect()
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\backends\base\base.py", line 219, in ensure_connection
+    self.connect()
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\backends\base\base.py", line 200, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\backends\mysql\base.py", line 234, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\MySQLdb\__init__.py", line 130, in Connect
+    return Connection(*args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\MySQLdb\connections.py", line 185, in __init__
+    super().__init__(*args, **kwargs2)
+django.db.utils.OperationalError: (2002, "Can't connect to MySQL server on 'rm-bp1di056jgb8m11774o.mysql.rds.aliyuncs.com' (10060)")
+
+[2023-05-06 00:02:26,887][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\fields\__init__.py", line 1823, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 82, in get
+    submitted_records = partyHistoryStudy.objects.filter(conditions)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1391, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1410, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1263, in build_filter
+    return self._add_q(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1410, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1345, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1191, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\fields\__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'None' expected a number but got ''.
+
+[2023-05-06 00:11:56,734][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 91, in get
+    conditions &= Q(grade=grade)
+UnboundLocalError: local variable 'conditions' referenced before assignment
+
+[2023-05-06 00:12:33,082][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 98, in get
+    return Response({"submitted_records": submitted_records_serializer.data})
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 745, in data
+    ret = super().data
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 246, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 663, in to_representation
+    return [
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 664, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 500, in to_representation
+    for field in fields:
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 361, in _readable_fields
+    for field in self.fields.values():
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\utils\functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 349, in fields
+    for key, value in self.get_fields().items():
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 1053, in get_fields
+    field_class, field_kwargs = self.build_field(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 1199, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 1317, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `meeting_theme` is not valid for model `partyHistoryStudy`.
+
+[2023-05-06 00:14:15,216][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 98, in get
+    return Response({"submitted_records": submitted_records_serializer.data})
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 745, in data
+    ret = super().data
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 246, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 663, in to_representation
+    return [
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 664, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 500, in to_representation
+    for field in fields:
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 361, in _readable_fields
+    for field in self.fields.values():
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\utils\functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 349, in fields
+    for key, value in self.get_fields().items():
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 1053, in get_fields
+    field_class, field_kwargs = self.build_field(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 1199, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 1317, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `meeting_theme` is not valid for model `partyHistoryStudy`.
+
+[2023-05-06 11:46:48,141][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 98, in get
+    return Response({"submitted_records": submitted_records_serializer.data})
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 745, in data
+    ret = super().data
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 246, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 663, in to_representation
+    return [
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 664, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 500, in to_representation
+    for field in fields:
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 361, in _readable_fields
+    for field in self.fields.values():
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\utils\functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 349, in fields
+    for key, value in self.get_fields().items():
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 1053, in get_fields
+    field_class, field_kwargs = self.build_field(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 1199, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 1317, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `meeting_theme` is not valid for model `partyHistoryStudy`.
+
+[2023-05-06 11:47:03,335][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 98, in get
+    return Response({"submitted_records": submitted_records_serializer.data})
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 745, in data
+    ret = super().data
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 246, in data
+    self._data = self.to_representation(self.instance)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 663, in to_representation
+    return [
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 664, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 500, in to_representation
+    for field in fields:
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 361, in _readable_fields
+    for field in self.fields.values():
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\utils\functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 349, in fields
+    for key, value in self.get_fields().items():
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 1053, in get_fields
+    field_class, field_kwargs = self.build_field(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 1199, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 1317, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `meeting_theme` is not valid for model `partyHistoryStudy`.
+
+[2023-05-06 11:48:28,937][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\MySQLdb\connections.py", line 259, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.OperationalError: (1054, "Unknown column 'party_history_study.meeting_theme' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 80, in list
+    page = self.paginate_queryset(queryset)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\generics.py", line 171, in paginate_queryset
+    return self.paginator.paginate_queryset(queryset, self.request, view=self)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\pagination.py", line 60, in paginate_queryset
+    return list(self.page)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\core\paginator.py", line 177, in __len__
+    return len(self.object_list)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 262, in __len__
+    self._fetch_all()
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\compiler.py", line 1175, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\MySQLdb\connections.py", line 259, in query
+    _mysql.connection.query(self, query)
+django.db.utils.OperationalError: (1054, "Unknown column 'party_history_study.meeting_theme' in 'field list'")
+
+[2023-05-06 11:48:42,666][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\MySQLdb\connections.py", line 259, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.OperationalError: (1054, "Unknown column 'party_history_study.meeting_theme' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\viewset.py", line 80, in list
+    page = self.paginate_queryset(queryset)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\generics.py", line 171, in paginate_queryset
+    return self.paginator.paginate_queryset(queryset, self.request, view=self)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\pagination.py", line 60, in paginate_queryset
+    return list(self.page)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\core\paginator.py", line 177, in __len__
+    return len(self.object_list)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 262, in __len__
+    self._fetch_all()
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\compiler.py", line 1175, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
+    db.query(q)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\MySQLdb\connections.py", line 259, in query
+    _mysql.connection.query(self, query)
+django.db.utils.OperationalError: (1054, "Unknown column 'party_history_study.meeting_theme' in 'field list'")
+
+[2023-05-06 14:46:29,598][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\fields\__init__.py", line 1823, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: '01-31T16:00:00.000Z'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 95, in get
+    submitted_records = partyHistoryStudy.objects.filter(conditions)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1391, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1410, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1263, in build_filter
+    return self._add_q(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1410, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1345, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1191, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\fields\__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'None' expected a number but got '01-31T16:00:00.000Z'.
+
+[2023-05-06 14:46:29,958][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\fields\__init__.py", line 1823, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: '01-31T16:00:00.000Z'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 95, in get
+    submitted_records = partyHistoryStudy.objects.filter(conditions)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1391, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1410, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1263, in build_filter
+    return self._add_q(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1410, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1345, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1191, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\fields\__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'None' expected a number but got '01-31T16:00:00.000Z'.
+
+[2023-05-06 14:50:27,256][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\fields\__init__.py", line 1823, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: '04-30T16:00:00.000Z'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 95, in get
+    submitted_records = partyHistoryStudy.objects.filter(conditions)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1391, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1410, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1263, in build_filter
+    return self._add_q(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1410, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1345, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1191, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\fields\__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'None' expected a number but got '04-30T16:00:00.000Z'.
+
+[2023-05-06 14:50:27,620][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\fields\__init__.py", line 1823, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: '04-30T16:00:00.000Z'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 95, in get
+    submitted_records = partyHistoryStudy.objects.filter(conditions)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1391, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1410, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1263, in build_filter
+    return self._add_q(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1410, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1345, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1191, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\fields\__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'None' expected a number but got '04-30T16:00:00.000Z'.
+
+[2023-05-06 14:51:09,630][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\fields\__init__.py", line 1823, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'aN'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 95, in get
+    submitted_records = partyHistoryStudy.objects.filter(conditions)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1391, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1410, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1263, in build_filter
+    return self._add_q(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1410, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1345, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1191, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\fields\__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'None' expected a number but got 'aN'.
+
+[2023-05-06 18:04:31,801][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\system\views\dept.py", line 196, in get_parent_dept
+    data = queryset.filter(id=data[0].parent).order_by('sort').values('name', 'id', 'parent')
+AttributeError: 'dict' object has no attribute 'parent'
+
+[2023-05-06 18:05:11,345][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\system\views\dept.py", line 196, in get_parent_dept
+    data = queryset.filter(id=data[0].parent).order_by('sort').values('name', 'id', 'parent')
+AttributeError: 'dict' object has no attribute 'parent'
+
+[2023-05-06 18:08:00,176][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\system\views\dept.py", line 195, in get_parent_dept
+    parent_id = data.first().parent
+AttributeError: 'dict' object has no attribute 'parent'
+
+[2023-05-06 18:09:05,056][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\fields\__init__.py", line 1823, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'dict'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\system\views\dept.py", line 198, in get_parent_dept
+    data = queryset.filter(id=parent_id).order_by('sort').values('name', 'id', 'parent')
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1391, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1410, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1345, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1191, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\fields\__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got {'name': '2021级计算机', 'id': 8, 'parent': 3}.
+
+[2023-05-06 18:25:01,973][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\system\views\dept.py", line 194, in get_parent_dept
+    print(self.user)
+AttributeError: 'DeptViewSet' object has no attribute 'user'
+
+[2023-05-06 18:25:57,016][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\system\views\dept.py", line 195, in get_parent_dept
+    print(true)
+NameError: name 'true' is not defined
+
+[2023-05-06 18:30:20,484][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\system\views\dept.py", line 200, in get_parent_dept
+    log(request.user, BLUE)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\system\views\dept.py", line 216, in log
+    sys.stdout.write(color + message + RESET + "\n")
+TypeError: can only concatenate str (not "Users") to str
+
+[2023-05-07 18:24:40,143][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 63, in reject
+    print(list(post))
+TypeError: 'partyHistoryStudy' object is not iterable
+
+[2023-05-07 18:26:16,030][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 93, in list
+    queryset = self.queryset.filter(meeting__contains=year_month, college_name=college_name, grade=grade)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1391, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1410, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1284, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1110, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1537, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'meeting' into field. Choices are: audit_results, class_name, college_name, create_datetime, creator, creator_id, dept_belong_id, description, grade, id, meeting_place, meeting_theme, meeting_time, metting_images, modifier, number_participants, update_datetime
+
+[2023-05-07 18:26:26,143][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 93, in list
+    queryset = self.queryset.filter(meeting__contains=year_month, college_name=college_name, grade=grade)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1391, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1410, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1284, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1110, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1537, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'meeting' into field. Choices are: audit_results, class_name, college_name, create_datetime, creator, creator_id, dept_belong_id, description, grade, id, meeting_place, meeting_theme, meeting_time, metting_images, modifier, number_participants, update_datetime
+
+[2023-05-07 18:26:38,922][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 93, in list
+    queryset = self.queryset.filter(meeting__contains=year_month, college_name=college_name, grade=grade)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1391, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1410, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1284, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1110, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1537, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'meeting' into field. Choices are: audit_results, class_name, college_name, create_datetime, creator, creator_id, dept_belong_id, description, grade, id, meeting_place, meeting_theme, meeting_time, metting_images, modifier, number_participants, update_datetime
+
+[2023-05-07 18:29:18,921][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 90, in list
+    queryset = self.queryset.filter(meeting__contains=year_month, college_name=college_name, grade=grade)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1391, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1410, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1284, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1110, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1537, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'meeting' into field. Choices are: audit_results, class_name, college_name, create_datetime, creator, creator_id, dept_belong_id, description, grade, id, meeting_place, meeting_theme, meeting_time, metting_images, modifier, number_participants, update_datetime
+
+[2023-05-07 18:31:36,713][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 86, in list
+    print(self.get_object.college_name)
+AttributeError: 'function' object has no attribute 'college_name'
+
+[2023-05-07 18:31:57,701][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 86, in list
+    print(self.get_object().college_name)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\generics.py", line 88, in get_object
+    assert lookup_url_kwarg in self.kwargs, (
+AssertionError: Expected view partyHistoryStudyStatisticsViewSet to be called with a URL keyword argument named "pk". Fix your URL conf, or set the `.lookup_field` attribute on the view correctly.
+
+[2023-05-07 18:39:51,551][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 86, in list
+    print(request.user.collage_name)
+AttributeError: 'Users' object has no attribute 'collage_name'
+
+[2023-05-07 18:45:28,761][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 89, in list
+    college_name = params.get('college_name', Dept.objects.all(request.user.dept_id))
+TypeError: all() takes 1 positional argument but 2 were given
+
+[2023-05-07 18:49:38,956][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 92, in list
+    serializer = PartyHistoryStudyStatisticsSerializer(queryset, many=True, request=request)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 121, in __new__
+    return cls.many_init(*args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 146, in many_init
+    child_serializer = cls(*args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\serializers.py", line 115, in __init__
+    super().__init__(**kwargs)
+TypeError: __init__() got an unexpected keyword argument 'request'
+
+[2023-05-07 18:58:55,173][django.request.log_response():224] [ERROR] Internal Server Error: /api/party_history_study_statistics/
+Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\asgiref\sync.py", line 472, in thread_handler
+    raise exc_info[1]
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\core\handlers\exception.py", line 38, in inner
+    response = await get_response(request)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\core\handlers\base.py", line 263, in _get_response_async
+    response = await sync_to_async(response.render, thread_sensitive=True)()
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\asgiref\sync.py", line 435, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\asyncio\tasks.py", line 455, in wait_for
+    return await fut
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\asgiref\current_thread_executor.py", line 22, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\asgiref\sync.py", line 476, in thread_handler
+    return func(*args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\renderers.py", line 100, in render
+    ret = json.dumps(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\json\__init__.py", line 234, in dumps
+    return cls(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type ListSerializer is not JSON serializable
+[2023-05-07 18:58:55,189][django.channels.server.log_action():160] [ERROR] [35;1mHTTP GET /api/party_history_study_statistics/?year_month=2023-05 500 [1.67, 127.0.0.1:49153][0m
+[2023-05-07 18:59:55,078][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 100, in list
+    return DetailResponse(data={data: data}, msg='获取成功')
+TypeError: unhashable type: 'ReturnList'
+
+[2023-05-07 19:01:01,214][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 100, in list
+    return DetailResponse(data={data: data}, msg='获取成功')
+TypeError: unhashable type: 'ReturnList'
+
+[2023-05-07 19:21:29,512][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 105, in list
+    self.queryset.create( college_name=college_name, class_name=class_name, grade=grade, is_submitted=False)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 451, in create
+    obj = self.model(**kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\base.py", line 503, in __init__
+    raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+TypeError: partyHistoryStudy() got an unexpected keyword argument 'is_submitted'
+
+[2023-05-07 20:08:59,718][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 100, in list
+    if(len(exits_data) == 0):
+UnboundLocalError: local variable 'exits_data' referenced before assignment
+
+[2023-05-07 20:24:07,899][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aItems\2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 94, in list
+    queryset = self.queryset.filter(meeting_time__contains=year_month, college_name=college_name, grade=grasearch_gradede)
+NameError: name 'grasearch_gradede' is not defined
+
+[2024-03-17 15:44:09,316][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "D:\aItems\【归档】2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 69, in get_queryset
+    department = user.department  # 假设用户有一个 'department' 属性
+AttributeError: 'Users' object has no attribute 'department'
+
+[2024-03-17 15:44:30,167][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "D:\aItems\【归档】2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 70, in get_queryset
+    department = user.department  # 假设用户有一个 'department' 属性
+AttributeError: 'Users' object has no attribute 'department'
+
+[2024-03-17 15:45:14,608][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "D:\aItems\【归档】2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 70, in get_queryset
+    department = user.department  # 假设用户有一个 'department' 属性
+AttributeError: 'Users' object has no attribute 'department'
+
+[2024-03-17 15:45:59,744][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "D:\aItems\【归档】2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 76, in get_queryset
+    descendant_departments = Department.objects.filter(ancestors_of=department)
+NameError: name 'Department' is not defined
+
+[2024-03-17 15:46:18,404][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "D:\aItems\【归档】2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 78, in get_queryset
+    descendant_departments = Department.objects.filter(ancestors_of=department)
+NameError: name 'Department' is not defined
+
+[2024-03-17 15:46:18,739][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "D:\aItems\【归档】2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 78, in get_queryset
+    descendant_departments = Department.objects.filter(ancestors_of=department)
+NameError: name 'Department' is not defined
+
+[2024-03-17 15:46:33,413][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "D:\aItems\【归档】2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 78, in get_queryset
+    descendant_departments = Dept.objects.filter(ancestors_of=department)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1391, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1410, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1284, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1110, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1537, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'ancestors_of' into field. Choices are: create_datetime, creator, creator_id, dept, dept_belong_id, description, email, id, key, messagecenter, modifier, name, owner, parent, parent_id, phone, role, sort, status, update_datetime, users
+
+[2024-03-17 15:49:19,870][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "D:\aItems\【归档】2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 78, in get_queryset
+    ancestor_departments = Dept.objects.get_ancestors(department)
+AttributeError: 'Manager' object has no attribute 'get_ancestors'
+
+[2024-03-17 15:49:44,648][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "D:\aItems\【归档】2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 78, in get_queryset
+    descendant_departments = Dept.objects.filter(ancestors_of=department)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1391, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1410, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1284, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1110, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1537, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'ancestors_of' into field. Choices are: create_datetime, creator, creator_id, dept, dept_belong_id, description, email, id, key, messagecenter, modifier, name, owner, parent, parent_id, phone, role, sort, status, update_datetime, users
+
+[2024-03-17 15:49:58,178][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "D:\aItems\【归档】2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 71, in get_queryset
+    print("department", department.id)
+AttributeError: 'int' object has no attribute 'id'
+
+[2024-03-17 15:50:16,277][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "D:\aItems\【归档】2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 78, in get_queryset
+    descendant_departments = Dept.objects.filter(ancestors_of=department)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1391, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1410, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1284, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1110, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1537, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'ancestors_of' into field. Choices are: create_datetime, creator, creator_id, dept, dept_belong_id, description, email, id, key, messagecenter, modifier, name, owner, parent, parent_id, phone, role, sort, status, update_datetime, users
+
+[2024-03-17 15:52:19,673][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "D:\aItems\【归档】2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 82, in get_queryset
+    return queryset.filter(department__in=department_ids)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1391, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1410, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1284, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1110, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1537, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'department' into field. Choices are: audit_results, class_name, college_name, create_datetime, creator, creator_id, dept_belong_id, description, grade, id, meeting_place, meeting_theme, meeting_time, metting_images, modifier, number_participants, update_datetime
+
+[2024-03-17 15:59:59,676][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "D:\aItems\【归档】2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 78, in get_queryset
+    descendant_departments = Dept.recursion_dept_info()
+TypeError: recursion_dept_info() missing 1 required positional argument: 'dept_id'
+
+[2024-03-17 16:00:12,965][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "D:\aItems\【归档】2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 80, in get_queryset
+    department_ids = descendant_departments.values_list('id', flat=True)
+AttributeError: 'list' object has no attribute 'values_list'
+
+[2024-03-17 16:00:58,736][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "D:\aItems\【归档】2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 82, in get_queryset
+    return queryset.filter(department__in=department_ids)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1391, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1410, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1284, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1110, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1537, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'department' into field. Choices are: audit_results, class_name, college_name, create_datetime, creator, creator_id, dept_belong_id, description, grade, id, meeting_place, meeting_theme, meeting_time, metting_images, modifier, number_participants, update_datetime
+
+[2024-03-17 16:01:27,943][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\mixins.py", line 40, in list
+    page = self.paginate_queryset(queryset)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\generics.py", line 171, in paginate_queryset
+    return self.paginator.paginate_queryset(queryset, self.request, view=self)
+  File "D:\aItems\【归档】2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\dvadmin\utils\pagination.py", line 41, in paginate_queryset
+    self.page = paginator.page(page_number)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\core\paginator.py", line 76, in page
+    number = self.validate_number(number)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\core\paginator.py", line 54, in validate_number
+    if number > self.num_pages:
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\utils\functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\core\paginator.py", line 103, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\utils\functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\core\paginator.py", line 98, in count
+    return len(self.object_list)
+TypeError: object of type 'NoneType' has no len()
+
+[2024-03-17 16:01:55,384][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "D:\aItems\【归档】2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 82, in get_queryset
+    return queryset.filter(department__in=department_ids)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1391, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1410, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1284, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1110, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1537, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'department' into field. Choices are: audit_results, class_name, college_name, create_datetime, creator, creator_id, dept_belong_id, description, grade, id, meeting_place, meeting_theme, meeting_time, metting_images, modifier, number_participants, update_datetime
+
+[2024-03-17 16:04:12,156][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "D:\aItems\【归档】2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 83, in get_queryset
+    return queryset.filter(department__in=department_ids)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1391, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1410, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1284, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1110, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1537, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'department' into field. Choices are: audit_results, class_name, college_name, create_datetime, creator, creator_id, dept_belong_id, description, grade, id, meeting_place, meeting_theme, meeting_time, metting_images, modifier, number_participants, update_datetime
+
+[2024-03-17 16:06:13,999][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "D:\aItems\【归档】2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 83, in get_queryset
+    return queryset.filter(department__in=department_ids)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1391, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1410, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1284, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1110, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1537, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'department' into field. Choices are: audit_results, class_name, college_name, create_datetime, creator, creator_id, dept_belong_id, description, grade, id, meeting_place, meeting_theme, meeting_time, metting_images, modifier, number_participants, update_datetime
+
+[2024-03-17 16:07:08,837][dvadmin.utils.exception.CustomExceptionHandler():54] [ERROR] Traceback (most recent call last):
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\rest_framework\mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+  File "D:\aItems\【归档】2023-03-09-易班工作室-校园党史学习平台建设\django-vue-admin\backend\party_history_study\views.py", line 83, in get_queryset
+    return queryset.filter(department__in=department_ids)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1391, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1410, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1284, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1110, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "D:\aSoftware\Anaconda\envs\dvadmin\lib\site-packages\django\db\models\sql\query.py", line 1537, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'department' into field. Choices are: audit_results, class_name, college_name, create_datetime, creator, creator_id, dept_belong_id, description, grade, id, meeting_place, meeting_theme, meeting_time, metting_images, modifier, number_participants, update_datetime
+
