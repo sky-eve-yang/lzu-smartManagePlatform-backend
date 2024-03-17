@@ -170,7 +170,9 @@ CORS_ALLOW_CREDENTIALS = True  # 指明在跨域访问中，后端是否支持�
 # ================================================= #
 # ********************* channels配置 ******************* #
 # ================================================= #
+# ASGI_APPLICATION = 'application.asgi.application'
 ASGI_APPLICATION = 'application.asgi.application'
+# ASGI_APPLICATION = 'application.asgi'
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels.layers.InMemoryChannelLayer"

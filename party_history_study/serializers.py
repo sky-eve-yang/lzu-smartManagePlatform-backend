@@ -22,6 +22,25 @@ class partyHistoryStudySerializer(CustomModelSerializer):
         fields = "__all__"
         model = partyHistoryStudy
         
+    def get_queryset(self):
+        # 调用父类的 get_queryset 方法获取基础查询集
+        queryset = super().get_queryset()
+        # 获取当前请求的用户
+        user = self.context['request'].user
+        print(user)
+
+        # 如果用户是超级用户，则不应用任何过滤
+        if user.is_superuser:
+            return queryset
+
+        # 假设每个 PartyHistoryStudy 对象都有一个 'department' 字段
+        # 这里我们使用自定义的查询来限制查询集
+        # 只包含用户所在部门及以下的记录
+        department = user.department  # 假设用户有一个 'department' 属性
+        subquery = Department.objects.filter(id__in=department.get_descendants(include_self=True)).values('id')
+
+        # 使用 Subquery 来过滤 PartyHistoryStudy 对象
+        return queryset.filter(department__in=subquery)
 
 
 class partyHistoryStudyCreateUpdateSerializer(CustomModelSerializer):
